@@ -78,10 +78,16 @@
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width: 920px){.hero .inner{grid-template-columns:1fr}.hero-art{height:260px}.grid-3{grid-template-columns:repeat(2,1fr)} }
     @media (max-width: 640px){.grid-3,.grid-2{grid-template-columns:1fr}.nav ul{display:none}.menu-btn{display:inline-flex}}
-
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    @media (max-width: 920px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.grid-4{grid-template-columns:1fr}}
+      
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .card h3{margin:.2rem 0 .3rem}
     .card p{margin:.2rem 0;color:var(--muted)}
+    .card-img{width:100%;height:400px;object-fit:cover;object-position:center;border-radius:12px;border:1px solid var(--border);margin-bottom:12px;background:#0e1016}
+    @media (max-width:640px){.card-img{height:110px}}
+    @media (max-width:640px){.card-img{height:140px}}
 
     /* PEOPLE */
     .person{display:flex;gap:14px;align-items:flex-start}
@@ -112,9 +118,10 @@
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="container nav-wrap">
-      <a href="#top" class="brand"><span class="dot"></span> <span id="labName">Example Robotics Lab</span></a>
+      <a href="#top" class="brand"><span class="dot"></span> <span id="labName">Humanoid Robotics Lab</span></a>
       <ul id="navLinks">
         <li><a href="#about" class="active">소개</a></li>
+        <li><a href="#director">교수님</a></li>
         <li><a href="#research">연구</a></li>
         <li><a href="#people">구성원</a></li>
         <li><a href="#pubs">논문</a></li>
@@ -156,7 +163,7 @@
   <section id="about">
     <div class="container">
       <h2>연구실 소개</h2>
-      <p class="section-lead">Example Robotics Lab(ERL)은 역학 기반 제어와 학습을 결합하여 실제 환경에서 동작하는 지능형 로봇을 지향합니다. 실험 기반 검증과 오픈소스 공유를 중요하게 생각합니다.</p>
+      <p class="section-lead">Humanoid Robotics Lab(HRL)은 역학 기반 제어와 학습을 결합하여 실제 환경에서 동작하는 지능형 로봇을 지향합니다. 실험 기반 검증과 오픈소스 공유를 중요하게 생각합니다.</p>
       <div class="grid grid-3">
         <div class="card">
           <h3>비전</h3>
@@ -175,33 +182,164 @@
   </section>
 
   <!-- RESEARCH -->
-  <section id="research">
+  <div class="container">
+  <h2>연구</h2>
+  <p class="section-lead">Current Research &amp; Ongoing Projects</p>
+
+
+  <!-- 현재 연구 과제 -->
+  <div class="card">
+  <ul class="timeline" style="margin:0">
+  <li class="tl-item"><strong>전신제어 기반 양팔 이동-조작 기술 개발</strong> <span class="role">(2025.01 ~)</span></li>
+  <li class="tl-item"><strong>휴머노이드 강인한 자율 이동 작업 기술 개발</strong> <span class="role">(2025.01 ~)</span></li>
+  <li class="tl-item"><strong>생활지능공간에서 근접지원 서비스를 위한 바퀴형 휴머노이드 로봇</strong> <span class="role">(2021.01 ~ 2024.)</span></li>
+  </ul>
+  </div>
+
+
+  <h3 class="mt-3">Research Areas</h3>
+  <div class="grid grid-3">
+  <article class="card">
+  <img class="card-img" src="images/mahru_standing.png" alt="Wheel‑legged Humanoid Robot"/>
+  <h3>Wheel‑legged Humanoid Robot</h3>
+  <p>Whole‑body balancing · Locomotion · Pattern planning</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/wheel-legged-humanoid-robot">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/Biped.png" alt="Humanoid (Biped)"/>
+  <h3>Humanoid (Biped)</h3>
+  <p>Whole‑body balancing · Locomotion · Pattern planning</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/bipedal-robot">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/dual arm.jpg" alt="Arm‑hand Manipulation"/>
+  <h3>Arm‑hand Manipulation</h3>
+  <p>Interaction force control · Safe task teaching · Object manipulation · Hybrid/Grasping control</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/arm-hand-manipulation">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/TWIPR-MPPI.png" alt="MPPI Control"/>
+  <h3>MPPI Control</h3>
+  <p>Nonlinear control · Locomotion · Pattern planning</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/mppi-control">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/RL.png" alt="Reinforcement Learning (RL)"/>
+  <h3>Reinforcement Learning (RL)</h3>
+  <p>Policy learning for balancing, locomotion and manipulation with model‑based priors</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/mppi-control">관련 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/dual arm.jpg" alt="Dual Manipulator"/>
+  <h3>Dual Manipulator</h3>
+  <p>Coordination of dual‑arm systems for whole‑body tasks and robust interaction control</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/arm-hand-manipulation">관련 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/research_haptic.jpg" alt="Haptic Interface"/>
+  <h3>Haptic Interface</h3>
+  <p>Dual arm‑hand haptic interface · Compliance control · Haptic rendering</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/haptic-interface">자세히 보기</a>
+  </div>
+  </article>
+  </div>
+
+
+  <h3 class="mt-3">Previous Research</h3>
+  <div class="grid grid-3">
+  <article class="card">
+  <img class="card-img" src="images/Biped Walking based on Whole-body Control.png" alt="Biped Walking based on Whole‑body Control"/>
+  <h3>Biped Walking based on Whole‑body Control</h3>
+  <p>Whole‑body balancing · Locomotion · Push‑recovery · Pattern planning</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/bipedal-robot">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/KIST Haptic Interface.png" alt="KIST Haptic Interface"/>
+  <h3>KIST Haptic Interface</h3>
+  <p>Dual arm‑hand haptic interface with compliance control and haptic rendering</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/haptic-interface">자세히 보기</a>
+  </div>
+  </article>
+  <article class="card">
+  <img class="card-img" src="images/Arm-Hand Manipulation.png" alt="Arm‑Hand Manipulation"/>
+  <h3>Arm‑Hand Manipulation</h3>
+  <p>Interaction force control · Safe task teaching · Object manipulation · Hybrid/Grasping control</p>
+  <div class="row mt-2">
+  <a class="chip" href="https://sites.google.com/view/humanoids-kist/research/arm-hand-manipulation">자세히 보기</a>
+  </div>
+  </article>
+  </div>
+  </div>
+  </section>
+
+  <!-- DIRECTOR -->
+  <section id="director">
     <div class="container">
-      <h2>연구 주제</h2>
-      <p class="section-lead">다음 주제들을 중심으로 이론–시뮬레이션–실험을 순환하며 연구합니다.</p>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3>휴머노이드 보행/전신제어</h3>
-          <p>QP 기반 Whole-Body Control과 발판/자세 계획, 자가충돌 회피.</p>
-        </article>
-        <article class="card">
-          <h3>강화학습 × 제어</h3>
-          <p>MPPI, CEM 등 샘플기반 제어와 정책학습 결합으로 강인성 향상.</p>
-        </article>
-        <article class="card">
-          <h3>상태 추정</h3>
-          <p>IMU·관절 센서 융합 EKF, 접촉 추정, 플로팅 베이스 추정.</p>
-        </article>
-      </div>
-      <div class="grid grid-2 mt-4">
-        <article class="card">
-          <h3>물체 취급 & 휴먼-로봇 상호작용</h3>
-          <p>카트 밀기/박스 파지 등 외력 하 작업 안정성.</p>
-        </article>
-        <article class="card">
-          <h3>시뮬레이션·실험 인프라</h3>
-          <p>MuJoCo, Isaac, ROS2, Unitree 플랫폼 운용.</p>
-        </article>
+      <h2>Lab Director</h2>
+      <p class="section-lead">연구실을 이끄는 교수님의 프로필과 주요 연구 관심사를 소개합니다.</p>
+      <div class="grid grid-2">
+        <!-- 좌측: 프로필 카드 -->
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start">
+          <img class="avatar" src="images/yonghwanoh.png" alt="Yonghwan Oh, Ph.D" style="width:120px;height:120px;border-radius:12px;object-fit:cover"/>
+          <div>
+            <h3 style="margin:0">Yonghwan Oh, Ph.D</h3>
+            <div class="role">Principal Research Scientist, KIST</div>
+            <p class="mt-2">E-mail: <a href="mailto:oyh@kist.re.kr">oyh@kist.re.kr</a></p>
+          </div>
+        </div>
+        <!-- 우측: 상세 이력 카드 -->
+        <div class="card">
+          <h3>Research Interests</h3>
+          <p style="margin:.2rem 0 .4rem"><strong>Mechanical design of robotic systems</strong></p>
+          <ul style="margin:.2rem 0 1rem">
+            <li>Dexterous arm–hand system</li>
+            <li>Upper-body dual-arm system</li>
+            <li>Biped &amp; wheel‑legged robot system</li>
+          </ul>
+          <p style="margin:.2rem 0 .4rem"><strong>Robot control</strong></p>
+          <ul style="margin:.2rem 0 1rem">
+            <li>Walking and whole‑body balance control of humanoid robots</li>
+            <li>Hand–arm coordination</li>
+            <li>Motion/interaction control of redundant manipulators</li>
+          </ul>
+
+          <h3 class="mt-3">Education</h3>
+          <ul style="margin:.2rem 0 1rem">
+            <li><strong>1991</strong> B.S. in Pohang University of Science and Technology (POSTECH)</li>
+            <li><strong>1993</strong> M.S. in Pohang University of Science and Technology (POSTECH)</li>
+            <li><strong>1999</strong> Ph.D. in Pohang University of Science and Technology (POSTECH)</li>
+          </ul>
+
+          <h3 class="mt-3">Work Experience</h3>
+          <ul style="margin:.2rem 0 1rem">
+            <li><strong>2011 – present</strong> Senior Research Scientist, KIST</li>
+            <li><strong>2001 – 2010</strong> Assistant Professor, UST</li>
+            <li><strong>1999 – 2000</strong> Post‑Doctoral Fellow, Dept. of Mechanical Engineering, Waseda University</li>
+          </ul>
+
+          <h3 class="mt-3">Awards</h3>
+          <ul style="margin:.2rem 0">
+            <li><strong>2018.06</strong> Finalist Best Conference Paper Award, International Conference on Mechatronics and Automation (ICMA)</li>
+            <li><strong>2017.06</strong> Finalist Best Conference Paper Award, International Conference on Mechatronics and Automation (ICMA)</li>
+            <li><strong>2016.06</strong> Finalist Best Conference Paper Award, International Conference on Mechatronics and Automation (ICMA)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -210,45 +348,342 @@
   <section id="people">
     <div class="container">
       <h2>구성원</h2>
-      <p class="section-lead">학생 모집 중입니다. 관심 있는 분은 이메일로 지원해주세요.</p>
+      <p class="section-lead">현재 연구실 구성원과 졸업생 정보입니다. (이미지는 <code>images/</code> 폴더에 업로드 후 파일명만 교체하세요)</p>
+
+      <!-- Researchers -->
+      <h3 class="mt-3">Researchers</h3>
       <div class="grid grid-3">
         <div class="card person">
-          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=60" alt="PI"/>
+          <img class="avatar" src="images/장재필.JPG" alt="Jaepil Jang" />
           <div>
-            <h3>홍길동 <span class="role">교수(PI)</span></h3>
-            <p>로봇 전신 제어, 보행, 강화학습.</p>
+            <h3>Jaepil Jang <span class="role">M.S</span></h3>
+            <p>Humanoid, Whole‑body control, Optimal control, Reinforcement learning</p>
+            <p class="role">M.S in Interdisciplinary Robot Engineering Systems, Hanyang University (Seoul)</p>
             <div class="row mt-2">
-              <a class="chip" href="#">Google Scholar</a>
-              <a class="chip" href="#">GitHub</a>
+              <a class="chip" href="mailto:jaepil9@hanyang.ac.kr">jaepil9@hanyang.ac.kr</a>
+              <a class="chip" href="https://sites.google.com/view/jaepil-jang/about">Website</a>
             </div>
           </div>
         </div>
         <div class="card person">
-          <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300&q=60" alt="석사과정"/>
+          <img class="avatar" src="images/유수경.JPG" alt="Sookyoung Yoo" />
           <div>
-            <h3>김로봇 <span class="role">석사과정</span></h3>
-            <p>EKF 기반 상태 추정, 센서 융합.</p>
-          </div>
-        </div>
-        <div class="card person">
-          <img class="avatar" src="https://images.unsplash.com/photo-1544005318-36e9b3c56c4b?w=300&q=60" alt="박사과정"/>
-          <div>
-            <h3>이제어 <span class="role">박사과정</span></h3>
-            <p>MPPI/CBF, 전신 QP 제어.</p>
+            <h3>Sookyoung Yoo <span class="role">B.S</span></h3>
+            <p>Humanoid, Quadrupedal Robot, Control, Planning</p>
+            <p class="role">B.S in Robotics, Kwangwoon University (Seoul)</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:zkxm0112@kw.ac.kr">zkxm0112@kw.ac.kr</a>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Integrated PhD Students -->
+      <h3 class="mt-3">Integrated PhD Students</h3>
+      <div class="grid grid-3">
+        <div class="card person">
+          <img class="avatar" src="images/jaewoo.png" alt="Jaewoo An" />
+          <div>
+            <h3>Jaewoo An <span class="role">Ph.D. Student</span></h3>
+            <p>Humanoid, Wheeled Robot, Manipulator, Reinforcement Learning</p>
+            <p class="role">B.S in Mechanical Engineering, Donga University (Busan), 2018</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:jwan@kist.re.kr">jwan@kist.re.kr</a>
+              <a class="chip" href="mailto:wooya0130@korea.ac.kr">wooya0130@korea.ac.kr</a>
+              <a class="chip" href="https://wooya0130.github.io">Website</a>
+            </div>
+          </div>
+        </div>
+        <div class="card person">
+          <img class="avatar" src="images/김태현.png" alt="Taehyun Kim" />
+          <div>
+            <h3>Taehyun Kim <span class="role">Ph.D. Student</span></h3>
+            <p>Humanoid, Quadrupedal Robot, Control</p>
+            <p class="role">B.S in Robotics, Kwangwoon University (Seoul)</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:xogus226@kist.re.kr">xogus226@kist.re.kr</a>
+              <a class="chip" href="mailto:xogus226@naver.com">xogus226@naver.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Students -->
+      <h3 class="mt-3">Master Students</h3>
+      <div class="grid grid-3">
+        <div class="card person">
+          <img class="avatar" src="images/전제찬.jpg" alt="Jechan Jeon" />
+          <div>
+            <h3>Jechan Jeon <span class="role">M.S Student</span></h3>
+            <p>Humanoid, Control, Planning</p>
+            <p class="role">B.S in Mechanical & System Design Engineering, Hongik University (Seoul)</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:124045@kist.re.kr">124045@kist.re.kr</a>
+              <a class="chip" href="mailto:jechan97@naver.com">jechan97@naver.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="card person">
+          <img class="avatar" src="images/정윤석.png" alt="YoonSeok Chung" />
+          <div>
+            <h3>YoonSeok Chung <span class="role">M.S Student</span></h3>
+            <p>Humanoid, Bipedal Robot, Planning, Wheeled Robot</p>
+            <p class="role">B.S in Robotics, Kwangwoon University (Seoul)</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:enlighten77777@gmail.com">enlighten77777@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="card person">
+          <img class="avatar" src="images/장유선.jpg" alt="Yusun Jang" />
+          <div>
+            <h3>Yusun Jang <span class="role">M.S Student</span></h3>
+            <p>Humanoid, Manipulator</p>
+            <p class="role">B.S in Robotics, Kwangwoon University (Seoul)</p>
+            <div class="row mt-2">
+              <a class="chip" href="mailto:ysjang0212@kist.re.kr">ysjang0212@kist.re.kr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Undergraduate Students (placeholder) -->
+      <h3 class="mt-3">Undergraduate Students</h3>
+      <div class="grid grid-3">
+        <div class="card person">
+          <img class="avatar" src="images/ID_Photo(man).png" alt="Undergraduate Student" />
+          <div>
+            <h3>Name <span class="role">Undergrad</span></h3>
+            <p class="role">정보 업데이트 예정</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alumni -->
+      <!-- Alumni -->
+<h3 class="mt-3">Alumni</h3>
+<div class="grid grid-4">
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/JYKim_Profile.png" alt="Junyoung Kim" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Junyoung Kim</h3>
+      <p class="role">Researcher; Ph.D. Student, HIER LAB., NCSU (2024)</p>
     </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/김명준.jpg" alt="Myungjun Kim" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Myungjun Kim</h3>
+      <p class="role">Researcher; Hyundai Motor (2023)</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/허성문.jpg" alt="Sungmoon Hur" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Sungmoon Hur</h3>
+      <p class="role">Ph.D. (2022)</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/조준희.jpg" alt="Joonhee Jo" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Joonhee Jo</h3>
+      <p class="role">Ph.D.; Hyundai Motor (2022)</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/임찬묵.jpg" alt="Chanmook Im" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Chanmook Im</h3>
+      <p class="role">Researcher; Hyundai Motor (2022)</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/유승재.jpg" alt="Seungjae Yoo" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Seungjae Yoo</h3>
+      <p class="role">M.S.</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/이상욱.jpg" alt="Sangwook Lee" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Sangwook Lee</h3>
+      <p class="role">M.S.; LG Electronics</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/min Nhat vu.jpg" alt="Min Nhat Vu" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Min Nhat Vu</h3>
+      <p class="role">M.S.; Ph.D. Student, IIT</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Minwoong Jung" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Minwoong Jung</h3>
+      <p class="role">M.S.; Hyundai Motor</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Donghyun Lee" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Donghyun Lee</h3>
+      <p class="role">M.S.; Hyundai Motor</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Taewook Kim" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Taewook Kim</h3>
+      <p class="role">M.S.</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Sungkyun Kim" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Sungkyun Kim</h3>
+      <p class="role">M.S.</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Seyoung Cheon" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Seyoung Cheon</h3>
+      <p class="role">M.S.; Hyundai Mobis</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Hoseon Lee" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Hoseon Lee</h3>
+      <p class="role">M.S.; Ph.D. Candidate, JAIST</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Kwanhyun Ryu" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Kwanhyun Ryu</h3>
+      <p class="role">Ph.D.; Hyosung</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Youngjun Jung" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Youngjun Jung</h3>
+      <p class="role">M.S.; Renault Samsung</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Jongeun Kim" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Jongeun Kim</h3>
+      <p class="role">Researcher</p>
+    </div>
+  </div>
+
+  <div class="card person alumni">
+    <img class="avatar" src="images/alumni/ID_Photo(man).jpg" alt="Tapo Bhattacharjee" loading="lazy" onerror="this.src='images/alumni/placeholder.jpg'">
+    <div>
+      <h3>Tapo Bhattacharjee</h3>
+      <p class="role">Researcher</p>
+    </div>
+  </div>
+</div>
   </section>
 
   <!-- PUBLICATIONS -->
   <section id="pubs">
     <div class="container">
       <h2>논문</h2>
+      <p class="section-lead">이전 사이트의 목록을 반영했습니다. 최근순으로 정리했으며, 저널/컨퍼런스로 구분했습니다.</p>
+
+      <!-- Journals -->
       <div class="card">
-        <div class="pub"><span class="year">2025</span> Kim et al., <strong>Robust Whole-Body Control with Variance-Adaptive MPPI</strong>, <span class="venue">Humanoids</span>.</div>
-        <div class="pub"><span class="year">2024</span> Lee & Hong, <strong>Floating-Base EKF for Humanoids in Contact</strong>, <span class="venue">RAS</span>.</div>
-        <div class="pub"><span class="year">2023</span> Park et al., <strong>Null-space Manipulability Optimization</strong>, <span class="venue">ICRA</span>.</div>
+        <h3>Journals</h3>
+        <div class="pub"><span class="year">2025</span> Jaewoo An, Jun Young Kim, Myo‑Taeg Lim, Yonghwan Oh, <strong>High‑Speed and Enhanced Motion Control for a Wheeled‑Legged Humanoid Robot using a Two‑Wheeled Inverted Pendulum with Roll Joint</strong>, <span class="venue">IEEE Access</span>.</div>
+        <div class="pub"><span class="year">2025</span> Sungmoon Hur, Hyunbum Cho, Joowan Kim, Yonghwan Oh, Jae‑Heung Park, <strong>A Compact Cardiopulmonary Resuscitation Chest Compression Device Using a Torsion‑Based Series Elastic Actuator</strong>, <span class="venue">IEEE Access</span>.</div>
+        <div class="pub"><span class="year">2022</span> Joonhee Jo, Gyunghoon Park, Yonghwan Oh, <strong>Robust walking stabilization strategy of humanoid robots on uneven terrain via QP‑based impedance/admittance control</strong>, <span class="venue">Robotics and Autonomous Systems</span>.</div>
+        <div class="pub"><span class="year">2020</span> Jihun Kim, Jaeha Yang, Seung Tae Yang, Yonghwan Oh, Giuk Lee, <strong>Energy‑Efficient Hip Joint Offsets in Humanoid Robot via Taguchi Method and Bio‑inspired Analysis</strong>, <span class="venue">Applied Sciences</span>.</div>
+        <div class="pub"><span class="year">2019</span> Ye Rim Lee, Jaehoon Chung, Yonghwan Oh, Youngsu Cha, <strong>Flexible shear and normal force sensor using only one layer of polyvinylidene fluoride film</strong>, <span class="venue">Applied Sciences</span>.</div>
+        <div class="pub"><span class="year">2018</span> Giuk Lee, Donggun Lee, Yonghwan Oh, <strong>One‑Piece Gravity Compensation Mechanism Using Cam Mechanism and Compression Spring</strong>, <span class="venue">IJPEM‑Green Technology</span>.</div>
+        <div class="pub"><span class="year">2018</span> Jung Hoon Kim, Sung‑Moon Hur, Yonghwan Oh, <strong>Performance analysis for bounded persistent disturbances in PD/PID‑controlled robotic systems with its experimental demonstrations</strong>, <span class="venue">International Journal of Control</span>.</div>
+        <div class="pub"><span class="year">2017</span> Giuk Lee, Sung‑Moon Hur, Yonghwan Oh, <strong>High‑Force Display Capability and Wide Workspace With a Novel Haptic Interface</strong>, <span class="venue">IEEE/ASME Transactions on Mechatronics</span>.</div>
+        <div class="pub"><span class="year">2014</span> Seokmin Hong, Yonghwan Oh, Doik Kim, Bum‑Jae You, <strong>Real‑Time Walking Pattern Generation Method for Humanoid Robots by Combining Feedback and Feedforward Controller</strong>, <span class="venue">IEEE Transactions on Industrial Electronics</span>.</div>
+        <div class="pub"><span class="year">2012</span> Yeonsik Kang, Hyunsoo Kim, Soo‑Hyun Ryu, Nakju Lett Doh, YongHwan Oh, Bum‑jae You, <strong>Dependable Humanoid Navigation System Based on Bipedal Locomotion</strong>, <span class="venue">IEEE Transactions on Industrial Electronics</span>.</div>
+        <div class="pub"><span class="year">2011</span> Tapomayukh Bhattacharjee, Yonghwan Oh, Ji‑Hun Bae, Sang‑Rok Oh, <strong>Control Design for Human‑like Reaching Movements using Redundancy in Robot Arm‑Trunk Systems</strong>, <span class="venue">International Journal of Control, Automation and Systems</span>.</div>
+        <div class="pub"><span class="year">2009</span> Seokmin Hong, Yonghwan Oh, Bum‑Jae You, Sang‑Rok Oh, <strong>A Walking pattern generation method of humanoid robot MAHRU‑R</strong>, <span class="venue">Intelligent Service Robotics</span>.</div>
+        <div class="pub"><span class="year">2008</span> SangJoo Kwon, Yonghwan Oh, <strong>On the Estimation of the Center of Mass of an Autonomous Bipedal Robot</strong>, <span class="venue">Journal of Institute of Control, Robotics and Systems Engineering</span>.</div>
+        <div class="pub"><span class="year">2006</span> Park No‑Hoon, Yonghwan Oh, Sang‑Rok Oh, <strong>Behavior‑based Control of Robotic Hand by Tactile Servoing</strong>, <span class="venue">International Journal of Applied Electromagnetics and Mechanics</span>.</div>
+      </div>
+
+      <!-- Conferences -->
+      <div class="card mt-3">
+        <h3>Conferences</h3>
+        <div class="pub"><span class="year">2024</span> Taehyun Kim, Jechan Jeon, Myo‑Taeg Lim, Yisoo Lee, Yonghwan Oh, <strong>Simultaneous Tracking and Balancing Control of Two‑Wheeled Inverted Pendulum with Roll‑joint using Dynamic Variance MPPI</strong>, <span class="venue">Humanoids 2024</span>.</div>
+        <div class="pub"><span class="year">2023</span> Joonhee Jo, Jaewoo An, Yonghwan Oh, <strong>Whole‑body balancing and differential driving control using a relative vector‑based LQR to address non‑holonomy of a wheel‑legged robot</strong>, <span class="venue">Ubiquitous Robots (UR)</span>.</div>
+        <div class="pub"><span class="year">2021</span> Joonhee Jo, Gyunghoon Park, Yonghwan Oh, <strong>Robust Landing Stabilization of Humanoid Robot on Uneven Terrain via Admittance Control and Heel Strike Motion</strong>, <span class="venue">ICRA 2021</span>.</div>
+        <div class="pub"><span class="year">2020</span> Gyunghoon Park, Jung Hoon Kim, Joonhee Jo, Yonghwan Oh, <strong>Lyapunov‑based Approach to Reactive Step Generation for Push Recovery of Biped Robots via Hybrid Tracking Control of DCM</strong>, <span class="venue">IROS 2020</span>.</div>
+        <div class="pub"><span class="year">2020</span> Joonhee Jo, Yonghwan Oh, <strong>Impedance control of humanoid walking on uneven terrain with centroidal momentum dynamics using quadratic programming</strong>, <span class="venue">IROS 2020</span>.</div>
+        <div class="pub"><span class="year">2020</span> Gyunghoon Park, Yonghwan Oh, <strong>Preliminary study on role of finite‑sized foot in push recovery of biped robot in sagittal plane via stabilization of divergent component of motion</strong>, <span class="venue">ETFA 2020</span>.</div>
+        <div class="pub"><span class="year">2020</span> Joonhee Jo, Yonghwan Oh, <strong>Contact Force based Balancing and Tracking Control of a Ballbot using Projected Task Space Dynamics with Inequality Constraints</strong>, <span class="venue">UR 2020</span>.</div>
+        <div class="pub"><span class="year">2020</span> Sung‑moon Hur, Jaeyoung Park, Jaeheung Park, Yonghwan Oh, <strong>Design of a Parallel Haptic Device with Gravity Compensation by using its System Weight</strong>, <span class="venue">ICRA 2020</span>.</div>
+        <div class="pub"><span class="year">2019</span> Gyunghoon Park, Jung Hoon Kim, Yonghwan Oh, <strong>Towards fully reactive multi‑step generation for humanoids against instantaneous push: A case of walking in place in sagittal plane</strong>, <span class="venue">IECON 2019</span>.</div>
+        <div class="pub"><span class="year">2019</span> Seungjae Yoo, Yonghwan Oh, <strong>Minimal null space task parameterization for balance control of humanoid robot</strong>, <span class="venue">ICMRE 2019</span>.</div>
+        <div class="pub"><span class="year">2019</span> Seungjae Yoo, Joonjee Jo, Yonghwan Oh, <strong>A Comparison Study on Coupling Effects in Balance Control Methods of Humanoid Robots through an Extended Task Space Formulation</strong>, <span class="venue">ICINCO 2019</span>.</div>
+        <div class="pub"><span class="year">2018</span> Seungjae Yoo, Yonghwan Oh, <strong>Control for Balance of Legged‑Wheel Hybrid Robot (LWHR) by regulating ground reaction force with kinematic coupling</strong>, <span class="venue">ICMA 2018 (Best Paper Finalist)</span>.</div>
+        <div class="pub"><span class="year">2017</span> Jongwoo Lee, Jung Hoon Kim, Yonghwan Oh, <strong>A Method for Robust Robotic Bipedal Walking on Rough Terrain: l1‑optimal Event‑based Feedback Controller</strong>, <span class="venue">IROS 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Minh Nhat Vu, Jongwoo Lee, Yonghwan Oh, <strong>Walking Control Algorithm of the 5‑link robot based on Operational Space Control</strong>, <span class="venue">ICMA 2017 (Best Paper Finalist)</span>.</div>
+        <div class="pub"><span class="year">2017</span> Minh Nhat Vu, Jongwoo Lee, Yonghwan Oh, <strong>A Finite State Machine and Walking Control Algorithm of the Biped Robot with Flat Foot</strong>, <span class="venue">ICMA 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Jongwoo Lee, Giuk Lee, Yonghwan Oh, <strong>Energy‑Efficient Robotic Leg Design Using Redundantly Actuated Parallel Mechanism</strong>, <span class="venue">AIM 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Jongwoo Lee, Minh Nhat Vu, Yonghwan Oh, <strong>A Force Direction Control Method for Robotic Bipedal Walking based on a Reduced Order Model</strong>, <span class="venue">AIM 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Minh Nhat Vu, Jongwoo Lee, Yonghwan Oh, <strong>Control Strategy for Stabilization of the Biped Trunk‑SLIP Walking Model</strong>, <span class="venue">URAI 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Jung Hoon Kim, Jongwoo Lee, Yonghwan Oh, <strong>Stability Regions for Standing Balance of Biped Humanoid Robots</strong>, <span class="venue">ICRA 2017</span>.</div>
+        <div class="pub"><span class="year">2017</span> Jongwoo Lee, Minh Nhat Vu, Yonghwan Oh, <strong>A Control Method for Bipedal Trunk Spring Loaded Inverted Pendulum Model</strong>, <span class="venue">ICAS 2017</span>.</div>
+        <div class="pub"><span class="year">2016</span> Jongwoo Lee, Yonghwan Oh, <strong>A Planar Stable Walking Model based on Ankle Actuation and the Virtual Pendulum Concept</strong>, <span class="venue">IROS 2016</span>.</div>
+        <div class="pub"><span class="year">2016</span> Jongwoo Lee, Jung Hoon Kim, Yonghwan Oh, <strong>A Novel Performance Measure for Biped Robots against Bounded Persistent Disturbances</strong>, <span class="venue">IROS 2016</span>.</div>
+        <div class="pub"><span class="year">2016</span> Sangwook Lee, Jongwoo Lee, Dong Gun Lee, Yonghwan Oh, <strong>Walking Pattern Generation in Sagittal Plane Possessing Characteristics of Human Normal Walking</strong>, <span class="venue">ICMA 2016 (Best Paper Finalist)</span>.</div>
+        <div class="pub"><span class="year">2016</span> Minwoong Jeung, Giuk Lee, Yonghwan Oh, <strong>Realization of Human Neck Motion with Novel Robotic Mechanism</strong>, <span class="venue">URAI 2016</span>.</div>
+        <div class="pub"><span class="year">2016</span> Jongwoo Lee, Giuk Lee, Sangwook Lee, Jung Hoon Kim, Seokmin Hong, Yonghwan Oh, <strong>A Novel Multi‑articular Leg Mechanism for Biped Robots Inspired by Bi‑articular Muscle</strong>, <span class="venue">BioRob 2016</span>.</div>
+        <div class="pub"><span class="year">2016</span> Jung Hoon Kim, Sung‑Moon Hur, Jongwoo Lee, Yonghwan Oh, <strong>A Study on the L1 Optimal PD Controller with Application to Joint Motion Control of a Robot Manipulator</strong>, <span class="venue">ICRA 2016</span>.</div>
+        <div class="pub"><span class="year">2016</span> Giuk Lee, Sung‑Moon Hur, Yonghwan Oh, <strong>A Novel Haptic device with High‑force Display Capability and Wide workspace</strong>, <span class="venue">ICRA 2016</span>.</div>
+        <div class="pub"><span class="year">2015</span> Joonhee Jo, DongHyun Lee, Duc Tron Tran, Yonghwan Oh, Sang‑Rok Oh, <strong>An On‑line Gravity Estimation Method using Inverse Gravity Regressor for Robot Manipulator Control</strong>, <span class="venue">IROS 2015</span>.</div>
+        <div class="pub"><span class="year">2015</span> Sung‑Moon Hur, Joonhee Jo, Yonghwan Oh, <strong>Task‑Space Torque Controller Based on Time‑Delay Control</strong>, <span class="venue">ICAS 2015</span>.</div>
+        <div class="pub"><span class="year">2015</span> Woohyeok Choi, Sung‑Moon Hur, Jaeha Kim, Yonghwan Oh, <strong>The Contact/Non‑contact Thimble Haptic device</strong>, <span class="venue">ICM 2015</span>.</div>
+        <div class="pub"><span class="year">2014</span> Seyoung Cheon, Woohyeok Choi, Sang‑Rok Oh, Yonghwan Oh, <strong>Development of an Underactuated Robotic Hand using Differential Gear Mechanism</strong>, <span class="venue">URAI 2014</span>.</div>
+        <div class="pub"><span class="year">2014</span> DongHyun Lee, Duc Tron Tran, Yonghwan Oh, <strong>An approach toward Human‑like Motion Control of a Dual Arm Robot for Picking Heavy Objects</strong>, <span class="venue">Humanoids 2014</span>.</div>
+        <div class="pub"><span class="year">2014</span> Sung‑Kyun Kim, Joonhee Jo, Yonghwan Oh, Sang‑Rok Oh, Siddhartha Srinivasa, Maxim Likhachev, <strong>Robotic Handwriting: Multi‑contact Manipulation based on Reactional Internal Contact Hypothesis</strong>, <span class="venue">IROS 2014</span>.</div>
+        <div class="pub"><span class="year">2014</span> Sung‑Moon Hur, Sang‑Rok Oh, Yonghwan Oh, <strong>Joint Space Torque Controller Based on Time‑Delay Control with Collision Detection</strong>, <span class="venue">IROS 2014</span>.</div>
+        <div class="pub"><span class="year">2014</span> Tae‑Uk Kim, Yonghwan Oh, <strong>Design of Spatial Adaptive Fingered Gripper Using Spherical Five‑Bar Mechanism</strong>, <span class="venue">ICAM 2014</span>.</div>
+        <div class="pub"><span class="year">2014</span> Jaesung Kwon, Woosung Yang, Hosun Lee, Ji‑Hun Bae, Yonghwan Oh, <strong>Biologically Inspired Control Algorithm for an Unified Motion of Whole Robotic Arm‑Hand System</strong>, <span class="venue">Ro‑MAN 2014</span>.</div>
+        <div class="pub"><span class="year">2013</span> Joonhee Jo, Sung‑Kyun Kim, Yonghwan Oh, Sang‑Rok Oh, <strong>Grasping Force Control of a Robotic Hand based on a Torque‑Velocity Transformation Using F/T Sensors with Gravity Compensation</strong>, <span class="venue">IECON 2013</span>.</div>
+        <div class="pub"><span class="year">2013</span> Sung‑Kyun Kim, DongHyun Lee, Seokmin Hong, Yonghwan Oh, Sang‑Rok Oh, <strong>From Human Motion Analysis to Whole‑Body Control of a Dual‑Arm Robot for Pick‑And‑Place Tasks</strong>, <span class="venue">IROS 2013</span>.</div>
+        <div class="pub"><span class="year">2012</span> Sang‑ik An, Yonghwan Oh, Dong‑Soo Kwon, <strong>Zero‑Moment Point Based Balance Control of Leg‑Wheel Hybrid Structures with Inequality Constraints of Kinodynamic Behavior</strong>, <span class="venue">IROS 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Sung‑Moon Hur, Sung‑Kyun Kim, Yonghwan Oh, Sang‑Rok Oh, <strong>Joint Torque Servo of a High Friction Robot Manipulator Based on Time‑Delay Control with Feed‑Forward Friction Compensation</strong>, <span class="venue">Ro‑MAN 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Joonhee Jo, Sung‑Kyun Kim, Yonghwan Oh, Sang‑Rok Oh, <strong>Contact Force Control of a Robotic Hand Using F/T Sensory Feedback with a Rigid Object</strong>, <span class="venue">CASE 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Kwanghyun Ryu, Yonghwan Oh, Minjoon Choi, <strong>COM Control of Dual Arm Robot using COM Jacobian</strong>, <span class="venue">CASE 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Hoyul Lee, Yonghwan Oh, Woong Hee Shon, Youngjin Choi, <strong>Stackable Manipulator for Mobile Manipulation Robot</strong>, <span class="venue">ICRA 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Sung‑Kyun Kim, Yonghwan Oh, Sang‑Rok Oh, <strong>Stackable Manipulator for Mobile Manipulation Robot</strong>, <span class="venue">ICRA 2012</span>.</div>
+        <div class="pub"><span class="year">2012</span> Young Jin Park, Hosun Lee, Yonghwan Oh, Wan Kyun Chung, <strong>Development of Kalman Filter based two‑port Body Force Observer for the Flexible Joint: Design and Experiments</strong>, <span class="venue">ICRA 2012</span>.</div>
+        <div class="pub"><span class="year">2011</span> Joonhee Jo, Sung‑Kyun Kim, Yonghwan Oh, Sang‑Rok Oh, <strong>Compliance Control of a Position Controlled Robotic Hand Using F/T sensor</strong>, <span class="venue">URAI 2011</span>.</div>
+        <div class="pub"><span class="year">2011</span> Kwanghyun Ryu, Yonghwan Oh, <strong>Balance Control of Ball‑on‑Plate System Using Redundant Manipulator</strong>, <span class="venue">ICMT 2011</span>.</div>
       </div>
     </div>
   </section>
@@ -265,36 +700,110 @@
     </div>
   </section>
 
+    <!-- OPENING / JOIN US -->
+  <section id="opening">
+  <div class="container">
+  <h2>모집 안내 (Opening)</h2>
+  <p class="section-lead">KIST Humanoid Robotics Lab.의 학연(UST·연계대학) 과정, 현장실습생, 인턴, 박사후연구원 모집 정보를 정리했습니다. 지원 전 이메일로 문의 주시면 더 빠르게 도와드립니다.</p>
+
+
+  <div class="grid grid-2">
+  <div class="card">
+  <h3>UST 및 학연과정</h3>
+  <p>다관절 로봇/휴머노이드의 설계·제어·모션 플래닝 연구. 로보틱스, 최적화, 선형대수, 동역학 지식과 실험 프로그래밍 역량을 함께 키웁니다.</p>
+  <ul>
+  <li>KIST School 학연과정을 통해 UST, 고려대, 연세대, 한양대 등 협약 19개 대학의 석·박사 학위 취득 가능</li>
+  <li>KIST에서 연구, 연계 대학에서 수업 수강 및 학위</li>
+  <li>모집 시기: 상반기(봄학기 시작) 지원 접수는 매년 <strong>8월</strong>, 하반기(가을학기 시작) 지원 접수는 매년 <strong>2월</strong></li>
+  <li>학연 전 연구실 경험 희망 시: 학부생은 <strong>현장실습</strong>, 졸업생은 <strong>인턴</strong>으로 참여 가능(비정기 오픈)</li>
+  </ul>
+  <p class="mt-2"><strong>문의</strong>: <a href="mailto:oyh@kist.re.kr">oyh@kist.re.kr</a> (지원서 제출 전 사전 연락 권장)</p>
+  </div>
+
+
+  <div class="card">
+  <h3>현장실습생</h3>
+  <ul>
+  <li>KIST와 협약된 대학 <strong>학부생</strong> 대상의 학점인정형 프로그램</li>
+  <li>로보틱스 관련 전공(기계, 전기/전자, 메카트로닉스, 로봇공학, 컴퓨터 등) 우대</li>
+  <li><strong>6개월</strong> 근무 가능자, 학연과정 희망자 <strong>우선</strong> 선발</li>
+  <li>각 대학의 <strong>학점인정형 현장실습 공지</strong>를 확인 후 접수</li>
+  </ul>
+  </div>
+
+
+  <div class="card">
+  <h3>인턴</h3>
+  <ul>
+  <li>연구과제 수행을 위한 인턴 연구원은 <strong>비정기</strong> 채용</li>
+  <li>학부 또는 석사 학위 보유자(또는 졸업예정자) 대상</li>
+  <li>공고는 KIST 홈페이지 <strong>채용공고</strong>에 게시</li>
+  </ul>
+  </div>
+
+
+  <div class="card">
+  <h3>박사후 연구원</h3>
+  <ul>
+  <li>관심자는 <a href="mailto:oyh@kist.re.kr">oyh@kist.re.kr</a>로 연락주시면 검토 후 포지션을 열 수 있음</li>
+  <li>또는 연구 과제 수행을 위해 <strong>비정기</strong> 채용하며 KIST 채용공고에 게시</li>
+  </ul>
+  <p class="mt-2"><em>For non‑Korean:</em> Currently, Humanoid Robotics Lab. has only programs for Koreans.</p>
+  </div>
+  </div>
+
+
+  <div class="mt-4">
+  <a class="btn" href="mailto:oyh@kist.re.kr">지원/문의 메일 보내기</a>
+  <span class="chip">지원 전 사전 문의 환영</span>
+  </div>
+  </div>
+  </section>
+
+  
+
   <!-- CONTACT -->
   <section id="contact">
-    <div class="container">
-      <h2>연락처</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>주소 & 이메일</h3>
-          <p>서울특별시 ○○구 ○○로 123, ○○대학교 공학관 123호</p>
-          <p>이메일: <a href="mailto:lab@example.edu">lab@example.edu</a></p>
-          <p>전화: 02-123-4567</p>
-          <div class="row mt-2">
-            <a class="chip" href="#">GitHub</a>
-            <a class="chip" href="#">YouTube</a>
-            <a class="chip" href="#">Instagram</a>
-          </div>
-        </div>
-        <div class="card" style="min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center">
-          <!-- 실제 위치 지도: Google Maps Embed로 교체하세요 -->
-          <div>
-            <div style="font-weight:700;margin-bottom:6px">지도 자리</div>
-            <div style="color:var(--muted)">Google Maps의 "공유 > 지도 퍼가기" 코드를 이 카드 안에 붙여넣으면 됩니다.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+  <h2>연락처 (Contact)</h2>
+  <p class="section-lead">방문/협업/입학 문의는 아래 연락처로 연락 주세요. (이메일이 가장 빠릅니다)</p>
+  <div class="grid grid-2">
+  <!-- Info -->
+  <div class="card">
+  <h3>Address</h3>
+  <p><strong>Office:</strong> L8409 &nbsp; / &nbsp; <strong>Lab:</strong> L8425</p>
+  <p><strong>Korea Institute of Science and Technology (KIST)</strong><br>
+  5, Hwarang-ro 14-gil, Seongbuk-gu, Seoul, 02792, South Korea
+  </p>
+  <p><strong>지능로봇연구센터 L8409</strong>, 한국과학기술연구원(KIST) <strong>국제협력관(L8)</strong><br>
+  02792, 서울특별시 성북구 화랑로 14길 5
+  </p>
+
+
+  <h3 class="mt-3">E-mail</h3>
+  <p><a href="mailto:oyh@kist.re.kr">oyh@kist.re.kr</a></p>
+
+
+  <div class="row mt-2">
+  <a class="chip" href="https://www.kist.re.kr/">KIST</a>
+  <a class="chip" href="mailto:oyh@kist.re.kr">이메일 보내기</a>
+  </div>
+  </div>
+
+
+  <!-- Map -->
+  <div class="card" style="padding:0; overflow:hidden">
+  <iframe title="KIST Map" width="100%" height="320" style="border:0" loading="lazy" allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps?q=5%20Hwarang-ro%2014-gil,%20Seongbuk-gu,%20Seoul%2002792&output=embed"></iframe>
+  </div>
+  </div>
+  </div>
   </section>
 
   <footer>
     <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
-      <div>© <span id="year"></span> Example Robotics Lab • All rights reserved.</div>
+      <div>© <span id="year"></span> Humanoid Robotics Lab • All rights reserved.</div>
       <div style="color:var(--muted)">Built with ❤️ by ERL</div>
     </div>
   </footer>
