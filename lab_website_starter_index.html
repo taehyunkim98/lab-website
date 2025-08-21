@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>연구실 홈페이지 템플릿</title>
+  <meta name="description" content="간단하고 깔끔한 연구실 소개 웹사이트 템플릿" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --panel: #121318;
+      --text: #e7e9ee;
+      --muted: #b8bdca;
+      --brand: #6aa9ff;
+      --brand-2: #7d5cff;
+      --accent: #22d3ee;
+      --card: #161823;
+      --border: #262a36;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    [data-theme="light"]{
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #141824;
+      --muted: #4b5563;
+      --brand: #2563eb;
+      --brand-2: #7c3aed;
+      --accent: #06b6d4;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Inter","Pretendard",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none;border-radius:999px;padding:.9rem 1.2rem;font-weight:600;box-shadow:var(--shadow);transition:transform .18s ease,opacity .18s ease}
+    .btn:hover{transform:translateY(-2px);opacity:.95}
+    .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+    .chip{display:inline-block;border:1px solid var(--border);padding:.35rem .7rem;border-radius:999px;font-size:.85rem;color:var(--muted)}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.6);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+    [data-theme="light"] .nav{background:rgba(255,255,255,.7)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+    .brand{display:flex;align-items:center;gap:.8rem;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav a{display:block;padding:.6rem .8rem;border-radius:10px;color:var(--muted)}
+    .nav a:hover,.nav a.active{color:var(--text);background:rgba(255,255,255,.06)}
+    .nav-cta{display:flex;align-items:center;gap:.6rem}
+    .menu-btn{display:none}
+
+    /* HERO */
+    .hero{position:relative;overflow:hidden}
+    .hero .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:72px 0}
+    .kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem}
+    h1{font-size:clamp(32px,4.5vw,56px);line-height:1.1;margin:.5rem 0 1rem}
+    .lead{color:var(--muted);font-size:1.1rem}
+    .hero-art{position:relative;height:380px;border-radius:var(--radius);background:radial-gradient(80% 120% at 20% 10%,rgba(125,92,255,.35),transparent 60%),radial-gradient(80% 120% at 80% 90%,rgba(34,211,238,.25),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0));border:1px solid var(--border);box-shadow:var(--shadow)}
+    .orb{position:absolute;border-radius:50%;filter:blur(18px);opacity:.8}
+    .orb.o1{width:220px;height:220px;background:radial-gradient(circle,#7d5cff,transparent 60%);top:-40px;left:-40px}
+    .orb.o2{width:180px;height:180px;background:radial-gradient(circle,#22d3ee,transparent 60%);right:-30px;bottom:-30px}
+
+    /* SECTIONS */
+    section{padding:64px 0;border-top:1px solid var(--border)}
+    h2{font-size:clamp(24px,3.2vw,36px);margin:0 0 10px}
+    .section-lead{color:var(--muted);margin:0 0 24px}
+
+    /* CARDS & GRIDS */
+    .grid{display:grid;gap:20px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width: 920px){.hero .inner{grid-template-columns:1fr}.hero-art{height:260px}.grid-3{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 640px){.grid-3,.grid-2{grid-template-columns:1fr}.nav ul{display:none}.menu-btn{display:inline-flex}}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .3rem}
+    .card p{margin:.2rem 0;color:var(--muted)}
+
+    /* PEOPLE */
+    .person{display:flex;gap:14px;align-items:flex-start}
+    .avatar{width:64px;height:64px;border-radius:50%;background:#222;border:1px solid var(--border);flex:0 0 64px;object-fit:cover}
+    .role{font-size:.9rem;color:var(--muted)}
+
+    /* PUBLICATIONS */
+    .pub{padding:14px 0;border-bottom:1px dashed var(--border)}
+    .pub:last-child{border-bottom:none}
+    .pub .year{font-weight:700;color:var(--accent);margin-right:.6rem}
+    .pub .venue{color:var(--muted)}
+
+    /* TIMELINE */
+    .timeline{position:relative;margin-left:10px}
+    .timeline:before{content:"";position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:var(--border)}
+    .tl-item{position:relative;padding-left:22px;margin:10px 0}
+    .tl-item:before{content:"";position:absolute;left:0;top:.5rem;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:var(--shadow)}
+
+    /* FOOTER */
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--border)}
+
+    /* Utility */
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .mt-2{margin-top:.5rem}.mt-3{margin-top:1rem}.mt-4{margin-top:1.6rem}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand"><span class="dot"></span> <span id="labName">Example Robotics Lab</span></a>
+      <ul id="navLinks">
+        <li><a href="#about" class="active">소개</a></li>
+        <li><a href="#research">연구</a></li>
+        <li><a href="#people">구성원</a></li>
+        <li><a href="#pubs">논문</a></li>
+        <li><a href="#news">소식</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn-ghost" id="themeToggle" aria-label="테마 전환">🌓</button>
+        <button class="btn menu-btn" id="menuBtn" aria-label="메뉴 열기">메뉴</button>
+        <a class="btn" href="mailto:lab@example.edu">이메일 문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container inner">
+      <div>
+        <div class="kicker">ROBOTICS • AI • CONTROL</div>
+        <h1>사람과 함께 움직이는<br/>지능형 로봇을 연구합니다.</h1>
+        <p class="lead">우리 연구실은 휴머노이드 보행, 전신제어, 강화학습 기반 정책, 상태추정(EKF) 등 로봇의 지능과 물리적 상호작용을 탐구합니다.</p>
+        <div class="row mt-3">
+          <a class="btn" href="#research">연구 주제 보기</a>
+          <a class="btn-ghost" href="#pubs">최근 논문</a>
+        </div>
+        <div class="mt-4">
+          <span class="chip">석/박사 학생 모집 중</span>
+          <span class="chip">산학 협력 환영</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="orb o1"></span>
+        <span class="orb o2"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>연구실 소개</h2>
+      <p class="section-lead">Example Robotics Lab(ERL)은 역학 기반 제어와 학습을 결합하여 실제 환경에서 동작하는 지능형 로봇을 지향합니다. 실험 기반 검증과 오픈소스 공유를 중요하게 생각합니다.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>비전</h3>
+          <p>복잡한 환경에서도 신뢰 가능한 로봇 행동을 설계하여 인간의 삶을 보조하고 확장합니다.</p>
+        </div>
+        <div class="card">
+          <h3>핵심 역량</h3>
+          <p>전신 QP 제어, MPPI/MPC, 동역학 모델링, 센서 융합(EKF/UKF), 실험 자동화.</p>
+        </div>
+        <div class="card">
+          <h3>협력</h3>
+          <p>산업체/연구기관과의 공동 연구, 데이터·플랫폼 공유, 현장 실증.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <h2>연구 주제</h2>
+      <p class="section-lead">다음 주제들을 중심으로 이론–시뮬레이션–실험을 순환하며 연구합니다.</p>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>휴머노이드 보행/전신제어</h3>
+          <p>QP 기반 Whole-Body Control과 발판/자세 계획, 자가충돌 회피.</p>
+        </article>
+        <article class="card">
+          <h3>강화학습 × 제어</h3>
+          <p>MPPI, CEM 등 샘플기반 제어와 정책학습 결합으로 강인성 향상.</p>
+        </article>
+        <article class="card">
+          <h3>상태 추정</h3>
+          <p>IMU·관절 센서 융합 EKF, 접촉 추정, 플로팅 베이스 추정.</p>
+        </article>
+      </div>
+      <div class="grid grid-2 mt-4">
+        <article class="card">
+          <h3>물체 취급 & 휴먼-로봇 상호작용</h3>
+          <p>카트 밀기/박스 파지 등 외력 하 작업 안정성.</p>
+        </article>
+        <article class="card">
+          <h3>시뮬레이션·실험 인프라</h3>
+          <p>MuJoCo, Isaac, ROS2, Unitree 플랫폼 운용.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section id="people">
+    <div class="container">
+      <h2>구성원</h2>
+      <p class="section-lead">학생 모집 중입니다. 관심 있는 분은 이메일로 지원해주세요.</p>
+      <div class="grid grid-3">
+        <div class="card person">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=60" alt="PI"/>
+          <div>
+            <h3>홍길동 <span class="role">교수(PI)</span></h3>
+            <p>로봇 전신 제어, 보행, 강화학습.</p>
+            <div class="row mt-2">
+              <a class="chip" href="#">Google Scholar</a>
+              <a class="chip" href="#">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="card person">
+          <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300&q=60" alt="석사과정"/>
+          <div>
+            <h3>김로봇 <span class="role">석사과정</span></h3>
+            <p>EKF 기반 상태 추정, 센서 융합.</p>
+          </div>
+        </div>
+        <div class="card person">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005318-36e9b3c56c4b?w=300&q=60" alt="박사과정"/>
+          <div>
+            <h3>이제어 <span class="role">박사과정</span></h3>
+            <p>MPPI/CBF, 전신 QP 제어.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="pubs">
+    <div class="container">
+      <h2>논문</h2>
+      <div class="card">
+        <div class="pub"><span class="year">2025</span> Kim et al., <strong>Robust Whole-Body Control with Variance-Adaptive MPPI</strong>, <span class="venue">Humanoids</span>.</div>
+        <div class="pub"><span class="year">2024</span> Lee & Hong, <strong>Floating-Base EKF for Humanoids in Contact</strong>, <span class="venue">RAS</span>.</div>
+        <div class="pub"><span class="year">2023</span> Park et al., <strong>Null-space Manipulability Optimization</strong>, <span class="venue">ICRA</span>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="container">
+      <h2>소식</h2>
+      <div class="timeline">
+        <div class="tl-item"><strong>2025-08</strong> 연구실 웹사이트 오픈 🎉</div>
+        <div class="tl-item"><strong>2025-07</strong> ICRA 2026 논문 1편 제출</div>
+        <div class="tl-item"><strong>2025-06</strong> 산업체 공동연구 착수</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>연락처</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>주소 & 이메일</h3>
+          <p>서울특별시 ○○구 ○○로 123, ○○대학교 공학관 123호</p>
+          <p>이메일: <a href="mailto:lab@example.edu">lab@example.edu</a></p>
+          <p>전화: 02-123-4567</p>
+          <div class="row mt-2">
+            <a class="chip" href="#">GitHub</a>
+            <a class="chip" href="#">YouTube</a>
+            <a class="chip" href="#">Instagram</a>
+          </div>
+        </div>
+        <div class="card" style="min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center">
+          <!-- 실제 위치 지도: Google Maps Embed로 교체하세요 -->
+          <div>
+            <div style="font-weight:700;margin-bottom:6px">지도 자리</div>
+            <div style="color:var(--muted)">Google Maps의 "공유 > 지도 퍼가기" 코드를 이 카드 안에 붙여넣으면 됩니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+      <div>© <span id="year"></span> Example Robotics Lab • All rights reserved.</div>
+      <div style="color:var(--muted)">Built with ❤️ by ERL</div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn?.addEventListener('click', () => {
+      const open = navLinks.style.display === 'flex';
+      navLinks.style.display = open ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.gap = '6px';
+    });
+
+    // --- Active link on scroll
+    const sections = ['about','research','people','pubs','news','contact'].map(id => document.getElementById(id));
+    const links = Array.from(document.querySelectorAll('.nav a'));
+    const setActive = () => {
+      const y = window.scrollY + 120; // offset for sticky nav
+      let current = null;
+      for(const sec of sections){
+        if(!sec) continue;
+        if(sec.offsetTop <= y) current = sec;
+      }
+      links.forEach(a => a.classList.remove('active'));
+      if(current){
+        const active = links.find(a => a.getAttribute('href') === '#' + current.id);
+        if(active) active.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', setActive);
+    window.addEventListener('load', () => { setActive(); document.getElementById('year').textContent = new Date().getFullYear(); });
+
+    // --- Theme toggle (light/dark)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if(saved) root.setAttribute('data-theme', saved);
+    themeToggle?.addEventListener('click', () => {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      root.setAttribute('data-theme', isLight ? 'dark' : 'light');
+      localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
