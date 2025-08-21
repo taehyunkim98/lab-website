@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KIST Haptic Interface • HRL</title>
+  <meta name="description" content="KIST Haptic Interface (Previous Research)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a href="../../index.html#top" class="brand"><span class="dot"></span> <span id="labName">Humanoid Robotics Lab</span></a>
+      <ul id="navLinks">
+        <li><a href="../../index.html">소개</a></li>
+        <li><a href="../../director.html">교수님</a></li>
+        <li><a href="../../research.html">연구</a></li>
+        <li><a href="../../people.html">구성원</a></li>
+        <li><a href="../../publications.html">논문</a></li>
+        <li><a href="../../news.html">소식</a></li>
+        <li><a href="../../opening.html">모집</a></li>
+        <li><a href="../../contact.html">연락처</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn-ghost" id="themeToggle" aria-label="테마 전환">🌓</button>
+        <a class="btn" href="mailto:oyh@kist.re.kr">이메일 문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding:40px 0 0">
+    <div class="container">
+      <div class="kicker">Previous Research</div>
+      <h1>KIST Haptic Interface</h1>
+      <p class="section-lead">고력 디스플레이·광범위 작업영역을 갖는 병렬 햅틱 디바이스 및 제어.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container grid grid-2">
+      <div class="card">
+        <h3>Overview</h3>
+        <p>캠/스프링 기반 중력보상과 병렬 메커니즘 설계를 통해 넓은 작업공간과 높은 출력력을 동시에 달성하는 햅틱 인터페이스를 개발했습니다. 충돌 감지 및 시간지연 제어 기반 토크 서보를 포함합니다.</p>
+        <div class="row mt-2">
+          <a class="chip" href="../../research.html#top">← Research로 돌아가기</a>
+          <a class="chip" href="../../publications.html#pubs">관련 논문</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../../images/KIST Haptic Interface.png" alt="KIST Haptic Interface">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid grid-3">
+      <div class="card">
+        <h3>Mechanism & Control</h3>
+        <ul>
+          <li>병렬 링크 + 중력보상 메커니즘</li>
+          <li>Time-Delay Control 기반 토크 서보</li>
+          <li>충돌 감지/안전 제어</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Applications</h3>
+        <ul>
+          <li>양팔-손 햅틱 텔레오퍼레이션</li>
+          <li>촉각 렌더링/컴플라이언스 제어</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Media</h3>
+        <p>이미지/영상은 <code>images/haptic/</code>에 추가 후 교체.</p>
+        <img class="card-img" src="../../images/haptic/demo1.jpg" alt="demo" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container card">
+      <h3>Related Publications</h3>
+      <ul>
+        <li><a href="../../publications.html">IEEE/ASME T-Mech 2017, ICRA 2016 등 보기</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px">
+      <div>© <span id="year"></span> Humanoid Robotics Lab</div>
+      <div style="color:var(--muted)">Built with ❤️ by HRL</div>
+    </div>
+  </footer>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>

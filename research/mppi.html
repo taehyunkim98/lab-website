@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MPPI Control • Humanoid Robotics Lab</title>
+<meta name="description" content="Sampling-based MPPI for nonlinear systems and locomotion"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>.breadcrumb{font-size:.92rem;color:var(--muted);margin:12px 0}.banner{width:100%;max-height:340px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);margin:14px 0 18px}</style>
+</head><body>
+<nav class="nav"><div class="container nav-wrap">
+  <a href="../index.html#top" class="brand"><span class="dot"></span><span id="labName">Humanoid Robotics Lab</span></a>
+  <ul id="navLinks">
+    <li><a href="../index.html">소개</a></li><li><a href="../director.html">교수님</a></li>
+    <li><a class="active" href="../research.html">연구</a></li><li><a href="../people.html">구성원</a></li>
+    <li><a href="../publications.html">논문</a></li><li><a href="../news.html">소식</a></li>
+    <li><a href="../opening.html">모집</a></li><li><a href="../contact.html">연락처</a></li>
+  </ul>
+  <div class="nav-cta"><button class="btn-ghost" id="themeToggle">🌓</button><a class="btn" href="mailto:oyh@kist.re.kr">이메일 문의</a></div>
+</div></nav>
+
+<main><div class="container">
+  <div class="breadcrumb">🔙 <a href="../research.html">Research</a> / MPPI Control</div>
+  <h1>MPPI Control</h1>
+  <p class="section-lead">샘플링 기반 경로적분 제어로 비선형 시스템에 실시간 최적 제어 입력을 산출.</p>
+
+  <img class="banner" src="../images/TWIPR-MPPI.png" alt="MPPI diagram">
+
+  <div class="grid grid-2">
+    <section>
+      <h3>Overview</h3>
+      <p>가중 샘플 궤적의 비용 기여로 제어를 업데이트하는 MPPI를 주행/균형 제어에 적용합니다. 동적 분산 조절로 탐색-활용 균형을 맞춥니다.</p>
+
+      <h3 class="mt-3">Key Ideas</h3>
+      <ul>
+        <li>Sampling-based trajectory optimization</li>
+        <li>Dynamic variance MPPI</li>
+        <li>Model-predictive rolling horizon</li>
+      </ul>
+
+      <h3 class="mt-3">Publications</h3>
+      <ul><li>Humanoids 2024 등 — <a href="../publications.html">Publications</a></li></ul>
+    </section>
+
+    <aside>
+      <div class="card"><strong>Use cases</strong><br>TWIPR, wheeled-legged base</div>
+      <div class="card mt-2"><strong>Status</strong><br>On-going</div>
+    </aside>
+  </div>
+</div></main>
+
+<footer><div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px">
+  <div>© <span id="year"></span> Humanoid Robotics Lab</div><div style="color:var(--muted)">Built with ❤️ by HRL</div>
+</div></footer>
+<script src="../assets/site.js"></script>
+</body></html>
