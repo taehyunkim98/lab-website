@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taehyunkim98.github.io/lab-website/sitemap.xml

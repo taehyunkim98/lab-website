@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 루트/메인 -->
+  <url><loc>https://taehyunkim98.github.io/lab-website/</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/index.html</loc></url>
+
+  <!-- 1뎁스 페이지 -->
+  <url><loc>https://taehyunkim98.github.io/lab-website/research.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/director.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/people.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/publications.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/news.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/opening.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/contact.html</loc></url>
+
+  <!-- 연구 상세 페이지들 -->
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/wheel-legged.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/biped.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/arm-hand.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/mppi.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/rl.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/dual-manipulator.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research/haptic.html</loc></url>
+
+  <!-- 이전 연구 상세 페이지들(만들면 추가) -->
+  <!--
+  <url><loc>https://taehyunkim98.github.io/lab-website/research-previous/biped-wbc.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research-previous/kist-haptic.html</loc></url>
+  <url><loc>https://taehyunkim98.github.io/lab-website/research-previous/arm-hand-manipulation.html</loc></url>
+  -->
+</urlset>
